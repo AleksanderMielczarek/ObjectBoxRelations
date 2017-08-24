@@ -1,0 +1,59 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'io.objectbox'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion sdkVersion
+    buildToolsVersion buildToolsVersionVersion
+    defaultConfig {
+        applicationId "com.github.aleksandermielczarek.objectboxrelations"
+        minSdkVersion minSdkVersionVersion
+        targetSdkVersion sdkVersion
+        versionCode versionMajor * 1000000 + versionMinor * 10000 + versionFix * 100
+        versionName "$versionMajor.$versionMinor.$versionFix.$build"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+        test.java.srcDirs += 'src/test/kotlin'
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+
+    //test
+    androidTestCompile("com.android.support.test.espresso:espresso-core:$espressoCoreVersion", {
+        exclude group: 'com.android.support', module: 'support-annotations'
+        exclude group: 'com.google.code.findbugs'
+    })
+    androidTestCompile "org.mockito:mockito-android:$mockitoVersion"
+    testCompile "junit:junit:$junitVersion"
+    testCompile "org.mockito:mockito-core:$mockitoVersion"
+    testCompile "org.mockito:mockito-inline:$mockitoVersion"
+    testCompile("com.nhaarman:mockito-kotlin-kt1.1:$mockitokotlinVersion") {
+        exclude group: "org.jetbrains.kotlin"
+    }
+
+    //support
+    compile "com.android.support:appcompat-v7:$supportLibraryVersion"
+
+    //rx
+    compile "io.reactivex.rxjava2:rxandroid:$rxandroidVersion"
+    compile "io.reactivex.rxjava2:rxjava:$rxjavaVersion"
+    compile "io.reactivex.rxjava2:rxkotlin:$rxkotlinVersion"
+
+    //objectBox
+    compile "io.objectbox:objectbox-android:$objectBoxVersion"
+    compile "io.objectbox:objectbox-kotlin:$objectBoxVersion"
+    kapt "io.objectbox:objectbox-processor:$objectBoxVersion"
+    compile "io.objectbox:objectbox-rxjava:$objectBoxRxVersion"
+}

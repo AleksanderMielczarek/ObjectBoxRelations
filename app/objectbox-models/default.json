@@ -1,0 +1,91 @@
+{
+  "_note1": "KEEP THIS FILE! Check it into a version control system (VCS) like git.",
+  "_note2": "ObjectBox manages crucial IDs for your object model. See docs for details.",
+  "_note3": "If you have VCS merge conflicts, you must resolve them according to ObjectBox docs.",
+  "entities": [
+    {
+      "id": "1:5889649304891333623",
+      "lastPropertyId": "7:1070236810141618468",
+      "name": "EntityInner",
+      "properties": [
+        {
+          "id": "1:1820947826857266205",
+          "name": "id"
+        },
+        {
+          "id": "3:1586302834953232953",
+          "name": "data1"
+        },
+        {
+          "id": "4:7812783563742946668",
+          "name": "data2"
+        },
+        {
+          "id": "5:7576948109644353767",
+          "name": "data3"
+        },
+        {
+          "id": "6:8330120410191046561",
+          "name": "data4"
+        },
+        {
+          "id": "7:1070236810141618468",
+          "name": "data5"
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "2:134714717944915533",
+      "lastPropertyId": "8:8809976069151427668",
+      "name": "EntityOuter",
+      "properties": [
+        {
+          "id": "1:7051774078728357124",
+          "name": "id"
+        },
+        {
+          "id": "2:3588478862640803975",
+          "name": "data1"
+        },
+        {
+          "id": "4:7030706602825018937",
+          "name": "data2"
+        },
+        {
+          "id": "5:8573860840634249010",
+          "name": "data3"
+        },
+        {
+          "id": "6:3161113166508433172",
+          "name": "data4"
+        },
+        {
+          "id": "7:5850216105867634571",
+          "name": "data5"
+        },
+        {
+          "id": "8:8809976069151427668",
+          "indexId": "2:6262817298158947150",
+          "name": "data6Id"
+        }
+      ],
+      "relations": []
+    }
+  ],
+  "lastEntityId": "2:134714717944915533",
+  "lastIndexId": "2:6262817298158947150",
+  "lastRelationId": "0:0",
+  "lastSequenceId": "0:0",
+  "modelVersion": 3,
+  "retiredEntityUids": [],
+  "retiredIndexUids": [
+    4610342791137214646
+  ],
+  "retiredPropertyUids": [
+    5565756304767664343,
+    6447554828857829248
+  ],
+  "retiredRelationUids": [],
+  "version": 1
+}
